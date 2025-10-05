@@ -1,0 +1,19 @@
+{
+  "name": "englang",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node run.js",
+    "test": "node tests/tests.js",
+    "build:cdn": "node scripts/build-cdn.mjs",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.5",
+    "husky": "^9.1.7"
+  }
+}
