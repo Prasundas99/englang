@@ -1,0 +1,8 @@
+start
+for each n from 1 to 10:
+  if n is even then begin
+    print n, "is even".
+  else begin
+    print n, "is odd".
+  end
+end

@@ -1,0 +1,16 @@
+start
+for each n from 1 to 20:
+  if n is divisible by 3 and n is divisible by 5 then begin
+    print "FizzBuzz".
+  else begin
+    if n is divisible by 3 then begin
+      print "Fizz".
+    else begin
+      if n is divisible by 5 then begin
+        print "Buzz".
+      else begin
+        print n.
+      end
+    end
+  end
+end

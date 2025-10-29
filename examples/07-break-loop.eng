@@ -1,0 +1,7 @@
+start
+for each n from 1 to 10:
+  if n is equal to 5 then begin
+    break.
+  end
+  print n.
+end

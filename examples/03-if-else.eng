@@ -1,0 +1,7 @@
+start
+set x to 10.
+if x is greater than 5 then begin
+  print "big".
+else begin
+  print "small".
+end

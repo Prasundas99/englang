@@ -1,0 +1,4 @@
+start
+for each n from 1 to 5:
+  print n.
+end

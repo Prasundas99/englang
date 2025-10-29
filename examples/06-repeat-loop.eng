@@ -1,0 +1,4 @@
+start
+repeat 3 times:
+  print "Hello".
+end
