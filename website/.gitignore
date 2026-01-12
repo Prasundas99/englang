@@ -1,0 +1,11 @@
+# Website dependencies
+node_modules/
+
+# Docusaurus generated folders
+.docusaurus/
+build/
+
+# Cache / logs
+.cache/
+*.log
+npm-debug.log*
