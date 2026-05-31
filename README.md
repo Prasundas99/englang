@@ -1,23 +1,44 @@
 # Englang
 
-Englang is a beginner-first programming language built in JavaScript.
+**Full name:** English, but it accidentally became a programming language.  
+**Short description:** Pseudocode that actually runs.  
+**One-line pitch:** Write it like English. Run it like code.
 
-It is designed to help learners understand programming logic using readable, English-like syntax before moving to symbol-heavy mainstream syntax.
+Englang is a tiny English-like programming language made for beginners who understand logic but do not want to fight syntax on day one.
+
+It starts with readable instructions and then gradually moves learners toward symbolic and curly-brace syntax.
+
+Englang is what happens when pseudocode gets tired of being theoretical.
+
+Also known as:
+
+```txt
+English that runs
+Pseudocode with commitment
+JavaScript's polite younger cousin
+A no-semicolon zone for beginners
+The language your school notebook wanted
+```
 
 ---
 
-## What Is Englang
+## Project Links
 
-Englang focuses on core programming ideas:
+- Live docs website: `https://englang.pephub.tech/`
+- GitHub repository: `https://github.com/Prasundas99/englang`
+
+---
+
+## What Englang Teaches
 
 - values and variables
 - expressions
-- conditions
+- decisions (`if / else`)
 - loops
 - functions
-- input and output
+- input/output flow
 
-You can write programs in a simple style such as:
+Example:
 
 ```englang
 start
@@ -27,11 +48,9 @@ print "Hello", name.
 
 ---
 
-## Language Stages
+## Language Progression
 
-Englang is structured in learning stages:
-
-- `V1`: English-like syntax (primary beginner mode)
+- `V1`: English-like syntax (beginner-first)
 - `V2`: Symbol-based pseudocode style
 - `V3`: Curly-brace style closer to mainstream languages
 
@@ -42,46 +61,53 @@ Englang is structured in learning stages:
 - `start` program entry
 - `set` assignments
 - `print` output
-- arithmetic expressions with precedence and parentheses
+- arithmetic expressions with precedence
 - `if / else if / else`
-- comparisons and logical operators
-- `while`, `for each`, and `repeat` loops
-- `break` inside loops
-- function declaration and function calls
-- input using `ask(...)` with injected handler
+- comparisons and logical conditions
+- loops: `while`, `for each`, `repeat`
+- `break`
+- functions
+- `ask(...)` input through runtime handler
 
 ---
 
-## Project Structure
+## Folder Structure
 
 ```txt
 englang/
   src/
-    index.js                 # Public runtime entry
-    lexer.js                 # Tokenizer (source text -> tokens)
-    parser.js                # Parser (tokens -> executable statements)
+    index.js
+    lexer.js
+    parser.js
     constants/
-      tokens.js              # Token type constants and keyword maps
+      tokens.js
     utils/
-      syntax.js              # Shared syntax utilities
+      syntax.js
   tests/
-    tests.js                 # Test suite
+    tests.js
   examples/
-    *.eng                    # Sample Englang programs
-    README.md                # Example index
+    *.eng
+    README.md
   docs/
-    *.md                     # Thinking/design notes
+    *.md
   scripts/
-    build-cdn.mjs            # Browser bundle build script
-  website/                   # Docusaurus docs website
-  run.js                     # Quick local run script
-  index.js                   # Root re-export from src/index.js
+    build-cdn.mjs
+  website/
+    docusaurus.config.js
+    docs/
+    src/
+    static/
+  cdn/
+    englang.min.js
+  run.js
+  index.js
   package.json
+  Backlog.md
 ```
 
 ---
 
-## Getting Started (Local)
+## Getting Started
 
 ### 1. Prerequisites
 
@@ -94,33 +120,31 @@ englang/
 npm install
 ```
 
-### 3. Run Tests
+### 3. Test
 
 ```bash
 npm test
 ```
 
-### 4. Run Demo Program
+### 4. Run Sample
 
 ```bash
 npm start
 ```
 
-`npm start` runs `run.js`.
-
 ---
 
-## Quick Usage in Node.js
+## Run Englang in Node.js
 
-Create a file like `playground.mjs`:
+Create `playground.mjs`:
 
 ```js
 import { runEnglang } from "./src/index.js";
 
 const sourceCode = `
 start
-set x to 10.
-print "Value of x is", x.
+set learner to "Prasun".
+print "Hello", learner.
 `;
 
 const result = runEnglang(sourceCode, console);
@@ -135,42 +159,23 @@ node playground.mjs
 
 ---
 
-## `runEnglang` API
+## Runtime API
 
 ```js
 runEnglang(sourceCode, logger = console, options = {})
 ```
 
-### Parameters
+- `sourceCode`: Englang program text
+- `logger`: output logger (`console` by default)
+- `options.ask(questionText)`: input provider for `ask(...)`
 
-- `sourceCode` (`string`): Englang program text
-- `logger` (`{ log: (...args) => void }`): output logger (defaults to `console`)
-- `options` (`object`): runtime options
-
-### Supported `options`
-
-- `ask(questionText)` (`function`): returns input string/value for `ask(...)` expressions
-
-Example:
-
-```js
-const result = runEnglang(sourceCode, console, {
-  ask(questionText) {
-    if (questionText === "What is your name?") return "Learner";
-    return "";
-  },
-});
-```
-
-### Return Value
-
-`runEnglang` returns a runtime snapshot object:
+Return shape:
 
 ```js
 {
-  variables: { ... },
-  functions: { ... },
-  output: [ ... ]
+  variables: {},
+  functions: {},
+  output: []
 }
 ```
 
@@ -178,18 +183,18 @@ const result = runEnglang(sourceCode, console, {
 
 ## Browser / CDN Usage
 
-Build browser bundle:
+Build bundle:
 
 ```bash
 npm run build:cdn
 ```
 
-Generated files:
+Outputs:
 
 - `cdn/englang.min.js`
 - `website/static/cdn/englang.min.js`
 
-In browser:
+Browser usage:
 
 ```html
 <script src="https://your-host/englang.min.js"></script>
@@ -204,18 +209,14 @@ print "Hello from browser".
 
 ---
 
-## Website Documentation
-
-The project includes a Docusaurus website under `website/`.
-
-Run docs site locally:
+## Docs Website (Local)
 
 ```bash
 npm --prefix website install
 npm --prefix website start
 ```
 
-Build docs site:
+Build:
 
 ```bash
 npm --prefix website run build
@@ -223,29 +224,22 @@ npm --prefix website run build
 
 ---
 
-## NPM Scripts (Root)
+## Root Scripts
 
-- `npm start` -> run sample program (`run.js`)
+- `npm start` -> run sample (`run.js`)
 - `npm test` -> run test suite (`tests/tests.js`)
 - `npm run build:cdn` -> build browser bundle
-- `npm run prepare` -> initialize Husky hooks
+- `npm run prepare` -> set up husky hooks
 
 ---
 
-## Learning Path
+## Suggested Learning Path
 
-If you are new to Englang:
+1. Introduction
+2. Tutorial (V1)
+3. How To Use
+4. CDN Usage
+5. Thinking
 
-1. Read docs website `Introduction`
-2. Complete `Tutorial (V1)`
-3. Follow `How To Use`
-4. Try `CDN Usage`
-5. Read `Thinking` for language design perspective
-
----
-
-## Notes
-
-- `Agent.md` and `Plan.md` are local workflow files and intentionally excluded from commits.
-- The repository uses ES modules (`"type": "module"` in `package.json`).
+Website: `https://englang.pephub.tech/`
 

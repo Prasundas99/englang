@@ -7,9 +7,9 @@ const currentDirectoryPath = path.dirname(currentFilePath);
 
 const config = {
   title: "Englang",
-  tagline: "English that runs.",
+  tagline: "Write it like English. Run it like code.",
   favicon: "img/favicon.ico",
-  url: "https://example.com",
+  url: "https://englang.pephub.tech",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -36,23 +36,24 @@ const config = {
   customFields: {
     languageMetadata: {
       whatIsEnglang:
-        "Englang is a teaching language designed for beginners to focus on logic, algorithms, and program flow with readable syntax.",
+        "Englang is a tiny English-like programming language made for beginners who understand logic but do not want to fight syntax on day one.",
       fullName: "English, but it accidentally became a programming language.",
-      shortSlogan: "Englang - English that runs.",
-      repositoryDescription: "English-like pseudocode that gave up pretending and started running.",
+      shortSlogan: "Pseudocode that actually runs.",
+      repositoryDescription:
+        "A beginner-first language that starts readable and slowly moves toward symbolic and curly-brace syntax.",
       warningLabel: "Warning: May cause sudden understanding of loops.",
-      projectVibe: "A beginner says an algorithm in English. Englang says: cool, I can run that.",
-      originStory: "Why are we pretending this cannot run?",
+      projectVibe: "Englang is what happens when pseudocode gets tired of being theoretical.",
+      originStory: "Write logic in near-English first, then grow into mainstream syntax.",
       versionNicknames: {
         v1: "Noob Friendly",
         v2: "Almost Coding",
         v3: "Now You Are Dangerous",
       },
       taglines: [
-        "Pseudocode that stopped being lazy.",
+        "Pseudocode that actually runs.",
         "Write it like English. Run it like code.",
         "Learn programming without getting punched by syntax.",
-        "No semicolon jumpscare in V1.",
+        "A no-semicolon zone for beginners.",
       ],
       featureNicknames: {
         start: "The lights on keyword",
@@ -72,12 +73,7 @@ const config = {
     },
   },
   themeConfig: {
-    announcementBar: {
-      id: "github-support",
-      isCloseable: false,
-      content:
-        '<div class="englang-announcement"><span class="englang-announcement-text">Enjoying Englang?</span><a class="englang-announcement-link" href="https://github.com/Prasundas99/englang" target="_blank" rel="noopener noreferrer">Star the project</a><a class="englang-announcement-link" href="https://github.com/Prasundas99/englang/fork" target="_blank" rel="noopener noreferrer">Fork on GitHub</a></div>',
-    },
+    announcementBar: undefined,
     navbar: {
       title: "Englang",
       items: [
@@ -92,8 +88,49 @@ const config = {
     },
     footer: {
       style: "dark",
+      links: [
+        {
+          title: "Author",
+          items: [
+            {
+              label: "Prasun Das on GitHub",
+              href: "https://github.com/Prasundas99",
+            },
+            {
+              label: "Prasun Das on LinkedIn",
+              href: "https://www.linkedin.com/in/prasun--das/",
+            },
+          ],
+        },
+        {
+          title: "Community",
+          items: [
+            {
+              label: "Star Englang",
+              href: "https://github.com/Prasundas99/englang",
+            },
+            {
+              label: "Fork Englang",
+              href: "https://github.com/Prasundas99/englang/fork",
+            },
+          ],
+        },
+        {
+          title: "Live Counts",
+          items: [
+            {
+              label: "GitHub Followers (live)",
+              href: "https://github.com/Prasundas99?tab=followers",
+            },
+            {
+              label: "Repository Stars (live)",
+              href: "https://github.com/Prasundas99/englang/stargazers",
+            },
+          ],
+        },
+      ],
       copyright:
-        'Made by <a href="https://github.com/Prasundas99" target="_blank" rel="noopener noreferrer">Prasun Das</a>',
+        'Built by <a href="https://github.com/Prasundas99" target="_blank" rel="noopener noreferrer">Prasun Das</a>. Follow on <a href="https://github.com/Prasundas99?tab=followers" target="_blank" rel="noopener noreferrer">GitHub</a> and <a href="https://www.linkedin.com/in/prasun--das/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.',
     },
   },
 };
