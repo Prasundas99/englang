@@ -139,7 +139,7 @@ npm start
 Create `playground.mjs`:
 
 ```js
-import { runEnglang } from "./src/index.js";
+import { runEnglang } from './src/index.js';
 
 const sourceCode = `
 start
@@ -162,7 +162,7 @@ node playground.mjs
 ## Runtime API
 
 ```js
-runEnglang(sourceCode, logger = console, options = {})
+runEnglang(sourceCode, (logger = console), (options = {}));
 ```
 
 - `sourceCode`: Englang program text
@@ -197,7 +197,7 @@ Outputs:
 Browser usage:
 
 ```html
-<script src="https://your-host/englang.min.js"></script>
+<script src="https://github.com/Prasundas99/englang/blob/main/cdn/englang.min.js"></script>
 <script>
   const result = Englang.runEnglang(`
 start
@@ -242,4 +242,3 @@ npm --prefix website run build
 5. Thinking
 
 Website: `https://englang.pephub.tech/`
-
