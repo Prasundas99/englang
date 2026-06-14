@@ -13,7 +13,7 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "esbuild": "^0.25.5",
+    "esbuild": "^0.28.1",
     "husky": "^9.1.7"
   }
 }
